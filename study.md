@@ -39,6 +39,8 @@ If a class inherits enumberable, one of the requirements is to have method "each
 class <class name>
 include Enumerable
 
+def each
+
 block of code
 
 end
