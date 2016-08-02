@@ -49,7 +49,7 @@ method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
 I'm not sure. The two methods seem to do the same thing. It seems like enumerable might only
-see one list item at a time?
+see one list item at a time.
 ```
 
 ## Compare Enumerable to Stream
