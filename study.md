@@ -34,7 +34,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-drop and find_index
+drop and find_index.
 ```
 
 ## Array#length versus Enumerable#count
