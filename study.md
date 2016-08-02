@@ -34,7 +34,14 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map
+reject
+for array reject returns a new array of the  items in self when the given block is not true. The ordering of non-rejected elements is maintained. For enumerable, it is almost the same, except it is an array for all elements of enum for which the given block returns false. In both cases.If no block is given, an Enumerator is returned instead.
+zip
+With zip:
+for enumerable it takes an element from emum and merges it with the other elements from each argument. It creates a sequence of n element arrays. Where N is one more than the count of the arguments. If the size of any of the elements is less than the enumerable size then the values are all nil. If a block is given it is returned as the output of the array,otherwise an array of arrays gets returned. The big difference here is that with array it converts any arguments into arrays then merges the elements of SELF with the elements frome each argument.
+
+There are slight differenciations in these behaviors which would make using them in one definition or another much easier than if there was only one rule/definition to abide by. This way we can implement them with different usages depending on the situation.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +50,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length is definied on array but not enumerable because arrays are a list of values, where enumberables are simply collections of classes. Therfore having the definition be in array where we can manipulate the list depending on that length makes much more sense. I
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +61,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both streams and enumerables involves sequences, specifically elements. Usually streams need to be interacted with one at a time instead of in batches. But enumerables are grouped together and can affect more than one element at a time
 ```
