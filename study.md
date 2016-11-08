@@ -34,7 +34,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+I chose ‘Collect’ and ‘Sort’
+
+In both instances the collect and sort methods create and returns a new array.  For ‘collect’ the array will contain the values of the block but if no block is given then an Enumerator is returned. For ‘sort’ the comparisons of the sort are done with the <==> operator or using a code block.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +45,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length appear to be sensibly defined for an array as length can be used on an array containing 0 ‘zero’ elements.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +56,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+According to the Wikipedia article, Streams are ‘a sequence of adapt elements made available over time’.  Enumerables are a bunch of methods which are packaged with each other.  They can run methods against elements in an array one at a time or they can iterate through an array (or ‘stream’) through an array and, in doing so, keep track of the results.
 ```
