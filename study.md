@@ -34,7 +34,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map, each
+
+both map and each work on all elements within the enumerable/array. However, in an array they are always indexed, and so that index number may be useful in a function which iterates over those elements, so arrays are likely to have methods that allow index as a perameter
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +45,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+length can more easily be calculated simply by adding 1 to the last index number. Count must enumerate each element
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +56,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Although both types have data which can be logically sequenced, in a stream that data is chronological, and not available all at the same time. Enumerables, although they are also logically sequenced, exist in memory and can be referenced at nearly any time.
 ```
