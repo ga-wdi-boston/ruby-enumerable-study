@@ -34,7 +34,13 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+'none? [{ |obj| block }] → true or false'
+Passes each element of the collection to the given block. The method returns true if the block never returns true for all elements. If the block is not given, none? will return true only if none of the collection members is true.
+
+'one? [{ |obj| block }] → true or false'
+Passes each element of the collection to the given block. The method returns true if the block returns true exactly once. If the block is not given, one? will return true only if exactly one of the collection members is true.
+
+An array redefines methods included from Enumerables because you might not need Enumerable as an option all the time.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +49,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerable has the count method, which is usually going to be the intuitive "length" of the enumeration.
+But why not call it length? Well, because it operates very differently. In Ruby's built-in data structures like Array and Hash, length simply retrieves the pre computed size of the data structure. It should always return instantly.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +61,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+In Object Oriented programming streans are generally implemented as iterators simillarly like the way we might use Enumerables in ways. Enumerables have a collection of data and streams process a bunch of data.
 ```
