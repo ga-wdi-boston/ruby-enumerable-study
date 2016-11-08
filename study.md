@@ -34,7 +34,17 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+I'm not completely sure, but my best guess is that Array redefines some methods
+that are included from Enumerable because it gets rid of the need for it to also
+use the each method. The Enumerable methods require the class to have an each
+method that's used to pass each element to the provided block. Two examples of
+method names that are shared between Array and Enumerable are:
+1. include? - the Enumerable version checks to see if any member of enum is equal to obj whereas the Array version, checks against self.
+2. to_a - I thought this one was interesting.  The Enumerable version returns an array containing the items in enum wheras the Array one just returns self. The Array version can also be called on a sub-class of Array, it converts that sub-class to an Array object.
+
+Resources:
+http://ruby-doc.org/core-2.3.0/Array.html
+http://ruby-doc.org/core-2.3.0/Enumerable.html
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +53,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+An Array has a length because it already has a defined size.  The Enumerable methods are reliant
+on the class to use it's each method to provide it one element at a time so it doesn't
+have a set size from the start.  It can count the number of items passed through though.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +66,11 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+I really like the analogy used in the wikipedia article: "A stream can be thought of as items on a conveyor belt being processed one at a time."  Similarly, enumerables are intaking one element at a time and processing them.  I think
+the biggest difference is that where a stream may potentially be unlimited, an enumerable will always end when the
+collection ends.
+
+Resources:
+https://en.wikipedia.org/wiki/Stream_%28computing%29
+http://ruby-doc.org/core-2.3.0/Enumerable.html
 ```
