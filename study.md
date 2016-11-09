@@ -34,7 +34,39 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+- any
+- collect
+- (count)
+
+- cycle = for enumerable: prevents original elements from being alerted, after
+the inital interaction, during successive interactions with the block
+
+- drop
+- drop_while
+- find_index
+- first
+- include?
+- map
+- reject
+- reverse_each
+- select
+- sort
+- take
+- take_while
+
+- to_a = for enumerable: creates a new array which contains the values of
+enumerable
+
+- to_h
+- zip
+
+The enumerable methods generally include an extra step, which protects the
+original elements from being altered. When Array describes the method, the
+'protective' step is left out.
+
+resources:
+http://ruby-doc.org/core-2.3.0/Array.html
+http://ruby-doc.org/core-2.3.0/Enumerable.html
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +75,11 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Array has a defined length, even if it's not explicitly spelled out. Enumerable
+could theoretically never end, so a length can't be determined.
+
+resources:
+http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +90,9 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams, like enumerables could be infinite. But all of an enumerable's data is
+available at the same time, where a stream's data is provided in chunks over time.
+
+resources:
+https://en.wikipedia.org/wiki/Stream_%28computing%29
 ```
