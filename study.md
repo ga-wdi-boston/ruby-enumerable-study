@@ -34,7 +34,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map
+sort
+It would redefine methods as they pertain to Array specifically. It seems that both array and emun methods apply in similar ways. (Not sure what the "Please give reasons for the methods you list.")
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +45,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Because an array will always be an indexed list where as an enumerable just iterates through a collection (which may have a length) but doesn't necessarily have an index value.
 ```
 
 ## Compare Enumerable to Stream
