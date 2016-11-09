@@ -17,9 +17,12 @@ material. Instead, digest what you've read and repeat it in your own voice.
 
 Please read the google definition of enumerable, the _description_ of the Ruby
 Array Class (the part before [Creating
-Arrays](http://ruby-doc.org/core-2.3.0/Array.html#class-Array-label-Creating+Arrays)),
+Arrays]
+(http://ruby-doc.org/core-2.3.0/Array.html#class-Array-label-Creating+Arrays)),
+
 the _description_ of the Ruby Enumerable Module (the part before **Public
-Instance Methods**), and the _overview_ of the List ADT at Wikipedia (the part
+Instance Methods**),
+and the _overview_ of the List ADT at Wikipedia (the part
 before the Contents block).  Also, please read through the list of method names
 in the **Methods** block on the left side of [Ruby Array
 Class](http://ruby-doc.org/core-2.3.0/Array.html) and [Ruby Enumerable
@@ -34,7 +37,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+reduce_each and drop_while are two methods that are processed similarly for both enumerables and arrays which in hindsight was probably a bad idea since we should be focusing on how the two are different.
+I am not sure why Array would redefine methods but I am assuming it has something to do with the fact that Classes are not the same as arrays so enumerables act differently than would array methods.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +47,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Again, not too sure, but perhaps because Enumerables are not necessarily arrays which means they may not have a length.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +58,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+I would assume that the data is processed the same way, that is one piece of data at a time. It seems like strings can be unlimited which is pretty nuts but I am fairly certain enumerables have to end.
 ```
