@@ -34,7 +34,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+They both share the .cycle method and the .drop method. Arrays might redefine
+methods inherited from Enumerable because they are similar data types, where
+arrays are more "eager" and enumerables are more "lazy". Similar data types
+used in slightly different styles.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +46,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerables create elements as needed and are not indexed like an array, meaning
+their lenght is not as concrete as an array. All an array needs to do is look at
+the last element and it's index.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +59,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are potentially unlimited and are sequenced only one at a time rather
+than in a batch. They are similar to arrays in that they are both inhereted
+from a list type object.
 ```
