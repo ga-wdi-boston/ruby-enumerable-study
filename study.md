@@ -34,7 +34,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+.map and .collect
+Both methods work the same way for Enumerables and Array. Array may redefine
+methods included from Enumerable because an Array has an index, and that may
+be a parameter that has use to send to a method. Array may redefine methods on
+enumerable because it's functionality and intended use is different enough that
+it requires certain changes.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +48,12 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+The reason that Enumerable is not able to have a sensibly defined 'length' property
+is because of the way length works. length returns the pre-computed size of
+the data structure and should always be returned instantly. For Enumerable, however,
+there is no quick way to get the size of the Enumeration. The only real way to
+get the size of an enumeration is to actually enumerate through it and increment
+count as it goes.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +64,10 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+The main similarity between Enumerables and Streams is that they both 'enumerate'
+through a set of data; that is, they will take a single element at a time and perform
+some function on it or do something with it. However, the main difference is that
+Streams will do this in a 'lazy' fashion, meaning it creates a 'stream' that
+represents the data but not acting on it right away. In contrast Enumerable will
+act on data straight away, creating a new list at each step of the process.
 ```
