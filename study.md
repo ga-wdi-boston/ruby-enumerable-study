@@ -34,7 +34,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+'map' is one instance method that both enumerable and array share. Another shared method is 'reject'.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +43,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+'length' on an array makes sense given that an array has marked and finite indices to quickly sum the number of elements in current time. And that will always return an integer. An enumerable is not always as neatly defined as an array so using 'length' doesn't make as much sense.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +54,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Enumerables and streams are similar in that they both allow you to act on enumerable data structures. Streams can have unlimited data.
+Functions within the enum module act on data structures immediately, whereas streams will create a function that represents the function but not actually do anything with it right away. None of this makes great sense though. If you need to make a lot of transformations on a large dataset, you'd likely use stream over enumerable as I'd imaging using stream would be faster / more efficient.
 ```
