@@ -34,7 +34,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+any? and drop.
+Ararys redefine some methods as the enumerable is for generic collections.
+The return values may differ on array implementation (e.g. returning an array).
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +46,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+This is because arrays and enumerables operate differently. Arrays are
+pre-computed and have quick ways of determining size. For Enumerbales,
+we don't know the exact structure at run-time. This can be extrapolated
+from the count method.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +60,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Steams and enumerables are both types of data sets. Steams are a sequence
+while enumerables are a collection.
 ```
