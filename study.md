@@ -34,7 +34,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+They share 'any?' and 'collect'. Array may redefine methods as it has a greater scope than any given Enumerable, and Enumerable may have more rigid parameters than Array. Both of the methods mentioned work the same way for Array and Enumerable.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +43,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerable's count method operates very differently. In Ruby's built-in data structures like Array and Hash, length simply retrieves the pre-computed size of the data structure and should always return instantly.
+
+For Enumerable#count, however, there's no way for it to know what sort of structure it's operating on and thus no quick, clever way to get the size of the enumeration (this is because Enumerable is a module, and can be included in any class). Enumerables are not guaranteed to have lengths, and thus the length method does not make sense.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +56,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both Enumerables and Streams enumerate, meaning they take each item at a time and do something with it. The Enum module is “eager” and will act on data straight away. This works well in most use cases. However, if you need to make a pipeline of transformations on a large dataset, it would be advantageous to use the Stream module. The Stream module will lazily act on the data, creating a stream that represents the function, but without actually acting on it straight away, rather than creating a new list at each step of the process.
 ```
