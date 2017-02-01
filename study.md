@@ -34,7 +34,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+inject and sort.  I would think that maybe the class methods that are inherit with the
+master class might override any methods that conflict?  I don't think I'm understanding the question.
+
+citing: https://www.sitepoint.com/guide-ruby-collections-iii-enumerable-enumerator/https://www.sitepoint.com/guide-ruby-collections-iii-enumerable-enumerator/
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +46,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+I believe because an array will have a set number of values and enumerables may not neccesarily.  Enumerables are modules, not actual classes.  So...they might not be structured like arrays.  Hard to say .length when you don't know if something has the ability to be read that way.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +57,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Ah, well this link doesn't actually go to anything, but I googled a bit.  Are you talking about
+https://en.wikipedia.org/wiki/Stream_(computing)?  I could see where they are similar.  They need filters (methods) to tell them what to do and when and where.  Without direction they would just get lost.  So, you have something, you tell it to do something(sort it, change it around, display some stuff), it goes and does it, returns as it was originally. If this sin't what you're talking about, just ignore this. 
 ```
