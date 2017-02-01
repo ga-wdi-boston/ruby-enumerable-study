@@ -34,7 +34,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!--
+any?
+zip
+I dont know why arrays would redefine methods included from enumerable
+ -->
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +48,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!--
+b/c enumerators do not start at 0?
+or, b/c enumerables are potenially infinate size?
+ -->
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +62,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!--
+streams are a constant flow of data similar to enums that are potenially endless.
+ -->
 ```
