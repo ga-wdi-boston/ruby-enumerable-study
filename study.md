@@ -34,7 +34,17 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!-- Two instance methods that both Array and Enumerable share would be 'any?'
+andn 'map'. Array would redefine methods included from Enumerable because while they
+have similar names and purposes, they handle different portions of the code.
+For example: Array method .map's notation indicates the following:
+map{|item| block}
+
+While Enumerable's provides:
+map{|obj| block}
+
+They're being used for a similar idea, but the information they take is different. Therefore, thats why Array redefined methods included from Enumerable.
+ -->
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +53,14 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!--
+'Length' is sensibly defined on Array and not Enumerable because Enumerable
+methods rely on an ordering between numbers in the collection, whereas Array
+methods are ordered, integer-indexed collections of any object. This implies that
+Enumerable methods dont have a 'length' method because the Enumerable methods
+rely on the relative value of each number in the collection. While array methods can
+always access these values with the index.
+ -->
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +71,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!-- Enumerables are able to be counted on a one-to-one correspondance. In a similar light, a stream can be thought of as items on a conveyer belt being processed one at a time rather than in large batches. They both have a specified level of grainulinit. However steams are codata ( potentially unlimited ) where as enumerables are not because they can be counted on a one-to-one correspondance rate.   -->
 ```
