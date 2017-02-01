@@ -34,7 +34,14 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+array: find finds the index of the array
+enumerable: find finds the value of an enum and returns tru or false
+
+array: sort sorts the index of the array
+enumerable: sorts the values of the enum
+
+
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +50,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+length is the number of indexes in an array.
+count is the number if items in an enum, but if a block is  given it counts the number
+of elements that yield true.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +63,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+streams and enumerables are alike as they are both sequences of data.
+where they differ is that streams are done over time while enumeables are done in batches.
 ```
