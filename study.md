@@ -34,7 +34,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+drop and first
+
+because drop is looking to get rid of a certain part/ number in a list, like an array.
+and because first is looking to find the first index or element in a list or array.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +46,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Because length is to see the amount of indexes in something like an array.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +57,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+They both are a way to store data. However a stream is for potentially unlimited data,
+where an enumerable is able to be counted. They can both be used to store values.
 ```
