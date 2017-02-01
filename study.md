@@ -34,7 +34,32 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+If a class inherits enumberable, one of the requirements is to have method "each". We also need to explicitly include Enumerable like so:
+
+class <class name>
+include Enumerable
+
+def each
+
+block of code
+
+end
+end
+
+ Enumerable allows iterations inside or/and outside of the class. Once enumberable is defined, we can create new objects, and apply methods on them. New objects are created based on defined enumerable.
+
+Two methods that array and enumberable share are find_index and map method. If block of code isn't provided within the each method, then enumerale is returned.
+
+1. find_index method
+
+Method find_index returns an index of a first object that evaluates as non false when block of code is executed. Returns nil if no match is found.
+
+
+2. map method
+
+Map method creates a new array containing the values returned by the block.
+
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +68,11 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerable isn't a class. It is a collection of different functionalities that are used by multiple classes. Therefore the length can't be determined ahead of time.
+
+Lenght method is used when length is known and can be returned.
+
+Count method on enumerable can be equivalent to the length. Count tend to be used when length can't be predicted ahead of time and it needs to be computed by iteration.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +83,9 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are a sequences of data elements that are available over time.
+
+The difference between streams and enumerable is that within streams functions can't operate on a stream as a whole but rather on one item of a stream at the time.
+
+Whereas in case of having enumerables, we can operate on all items at the time.
 ```
