@@ -34,9 +34,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-map and sort are defined on both. I think that the reason for being defined differently on enumerables is because enumerables are a mixin, meaning they contribute methods to a number of classes, whereas an array might generally need a more specific application of that method.
+map and sort are defined on both. I think that the reason for being defined differently on enumerables is because enumerables are a mixin, meaning they contribute methods to a number of classes, whereas an array might generally need a more specific application of that method. It seems that a method can be defined multiple times if some of those instances are coming from included modules? Thus allowing several different forms of a method, some more generic and some more specific.
 
-Map and sort seem to fit this definition, where the method needed on arrays is probably simpler than the generic one used by Enumerables.
+Map and sort seem to fit this definition, where the method needed on arrays is probably simpler than the generic one used by Enumerables, but both can be valuable.
 ```
 
 ## Array#length versus Enumerable#count
