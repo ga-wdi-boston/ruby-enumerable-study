@@ -34,7 +34,11 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+
+One shared instance method is select.  For an array, a new array is returned and a block returns a true value.  For an enumerable, the select instance method operates on a hash instance.  Although select acts similarly for both arrays and enumerables, it will return a hash object when it is operated on by a hash.
+
+Another shared instance method is reject.  For both arrays and enumerables, the reject instance method reutrns an array.  However, it appears that the array instance method returns a new array at the end, rather than the original array.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +47,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Source: http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby
+
+According to the above source, while length and count appear to complete the same task, they are different in how they execute the method.  With enumerables, the data structure is not immediately known and accessible.  While arrays have a predetermined length, enumerables only determine length by actually enumerating through the data.  Therefore, the enumerable value cannot return a value immediately and it is given a different name than length.
+
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +61,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+
+Streams can be thought of as an alterative to enumerables.  Streams support lazy operations (whereas enumerables are eager).  By lazy, I mean the category of non-enumerables where operations do not require the generation of intermeidate lists until achieving a result.  Another difference regards purpose of streams and enumerables.  Because enumerables, like count, cannot be predetermined, they are ill suited for infinite data (see question above).  It is for this reason taht streams are a better option when working with large data sets.
+
 ```
