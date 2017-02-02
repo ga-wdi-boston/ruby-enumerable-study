@@ -34,7 +34,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+I have no clue and I don't know differentiate array and enumerable even after reading the require readings again and again. Please let me know if there are better sources or if this will be go over in class.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +43,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+There is no length method on Enumerable. I am very confuse on this subject. Please go over in class regarding array vs enumerable.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +54,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both are looking at data in a order. enumerables have different methods and streams can have unlimit data. Please explain or go over this in class. I have never been so confused on a study repo.
 ```
