@@ -34,7 +34,17 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+I chose these methods to study because they are used in other languages as well, so I thought it would be important.
+.map
+using map on an array will map a function (that you define within it) and apply it to each element of the array. This will create a new array with these new values. The difference between using an array or an enumerator is the syntax (map{|item|block} -> new array) vs (map{|object| block} -> array)
+
+.collect
+also goes through each element of the array and redefines it depending on what function you put inside.
+
+Looks like the difference between array and enumerable is how you use them. Array takes in an item where enumerable will take in an object. WIth an array, each item will be separated, acted upon, and then brought back to define a new array but for enumerable, the object you define is just placed inside the array in each place.
+
+
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +53,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+with an array, length will return the number of elements in that array, including zero if there are no elements. length cannot be defined with enumerable but it wouldn't make sense. You cannot place length inside each element of the enumerable object the same way you can count the length of an array by counting each element.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +64,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+streams process items one at a time, similar to enumerable, functions don't operate on them as a whole but affect each object.
 ```
