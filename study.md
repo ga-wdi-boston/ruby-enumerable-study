@@ -34,7 +34,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+The methods, each and map are shared by Array and Enumerable. Because an array using number index as key,
+all the array have same index key. Therefore, redefining methods will be easy to be used by user.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +44,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+An array has fixed size, 'length' is only work for an enumerable has fixed number like array.
+'Count' method is able to take a blog which is work for a unfinity ennumerable.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +56,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+The data in stream will be iterated by time. The key of streams is time. An enumerable is not. 
 ```
