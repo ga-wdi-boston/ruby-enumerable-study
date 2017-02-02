@@ -34,7 +34,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+chunk, map, collect
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +43,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length on Array is sensibly defined because the length is important for accessing a pair of arguments. Also to keep track of own length at all times to know how many data we are working with - to iterate of the array.
+
+Enumerable have methods which rely on an ordering between members of the collection.
+
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +57,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Stream has sequence of data - items which are processed one at a time more often then in large batch.
+
 ```
