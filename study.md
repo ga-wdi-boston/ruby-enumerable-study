@@ -34,7 +34,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+#map, #reject, #select
+
+I am unsure why Ruby chooses to redefine these methods for Arrays. From what I can tell both the Array and the Enum just yield something to a given block.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,8 +45,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+`length` is defined on an array because it is a pre-computed property of any given array. An enum cannot know what type of object it is oeprating on and thus must calculate it when called.
 ```
+
+[Stack Overflow](http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby)
 
 ## Compare Enumerable to Stream
 
@@ -54,5 +58,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are like enumerables because contain data elements that must be worked on one at a time. They are different becuase they are potentially endless sources of data whereas an enumerable will refer to something finite like an array.
 ```
