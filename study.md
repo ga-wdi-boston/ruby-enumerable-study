@@ -34,7 +34,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+1. Select
+2. Random
+
+Array may redefine methods included from enemerable to be able to work with
+negative numbers. For instance to select negative numbers from an array. Or to
+find Random numbers in an array.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +48,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+I'm not sure. The two methods seem to do the same thing. It seems like enumerable might only
+see one list item at a time.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +60,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+They both work on one item at a time. They are different in that streams are possibly
+infinite. At least to the best of my understanding. I'm not sure I understand what
+enumerable really means.
 ```
