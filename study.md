@@ -34,7 +34,18 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+A Enumerable module is found within any class, and they act to group methods and constants.
+Array may redifine methods included from Enumerable because the methods are assigned to
+objects when used over an Array, whereas Enumerable methods can be used on
+anything defined as enumerable, which includes all array values.
+
+With the array find_index method, this method will iterate over an array and
+return the index of the first object that is equal to the compared object.
+The Enum find_index method being used here could be redefined in this situation
+because any number blocks or arguements set as enumerables may not exist within the array,
+causing a different response to those parameters.
+The take(n) method in an Array will return the first positive number n elememts
+from the array.  If a negative number is given an error will result, whereas the take(n) Enumerable method does have that same restriction.
 ```
 
 ## Array#length versus Enumerable#count
@@ -43,7 +54,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length is not defined with Enumerables because enumerables only have a set length when
+used to create modules set to other classes, like an Array.  The enumerable 'count' method counts from the beginning, so it is still possible for the count to continue without knowing the endpoint.
 ```
 
 ## Compare Enumerable to Stream
@@ -54,5 +66,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are like enumerables in tbat they have data of an undefined length, and in OOP, they can both be used as iterators of objects.  Streams cannot have normal functions operated on them; only filters can, which produce other streams, referred to as pipelines.  Enumerables can have methods operated on them that return only one result or a specific number of results, and then the function ends.  
 ```
