@@ -39,7 +39,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map - similarly creates a new array/list that is a set/subset of the original
+reduce - such a common operation to iterate through a list
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +49,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Count on ruby is more robust than length.  Count enumerates through a list rather than return length when list is created.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +60,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Enumberables and Streams are related to a sequence of data elements. I think in object oriented programming they behave relatively the same.    
 ```
