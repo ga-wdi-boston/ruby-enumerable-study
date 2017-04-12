@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+drop and map methods are shared between Array and Enumerable. Array may redefine methods included from Enumerable to make it specific to Arrays that may not be applicable to Enumberable. I selected drop and map because I used these methods during today's lessons and was able to apply it to different objects.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length is defined on Array because length can be identified when an array is initialized. With an Enumerable, length cannot be determined because when an Enumberable is declared it doesnt' require a length, only that it has the each method defined.
+Source: http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +60,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both enumerables and streams iterate over a collection. Streams are ideal when dealing with long collections whereas enumerables may be preferable for short lists.
+Enumberable is described as 'eager' because an intermediate list is generated while operations are run, whereas stream is 'lazy' because it will only pass the computations when invoked.
+Source: http://elixir-lang.org/getting-started/enumerables-and-streams.html
 ```
