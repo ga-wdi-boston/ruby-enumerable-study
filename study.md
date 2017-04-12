@@ -39,7 +39,13 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+One method is map.  The map method in the enumerable points to the cat method to
+take an element and create an array populated with the object's length's worth of numbers.
+In array, it includes map_with_index, since arrays are index based and other enumerables
+may not be.
+
+A second method is the slice method.  The array slice method is based on indexes.
+However, enumerator slice is based on patterns before or after the passed block.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +54,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Array length is the number of populated indices in the array.  Count gives the
+index and place of a passed object or block.  Length is not used in enumerable because
+not all enumerable objects are length based.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +67,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are like enumerables in that they can be iterated over and look like data
+grouped together.  They are different in that streams can be inifite and are not necessarily formal
+data structures while enumerables tend to be arrays, objects or hashes.
 ```
