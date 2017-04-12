@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+.map is an example of a method name that both Array and Enumerable share. Another example of a method
+shared by both arrays and Enumerables is .reduce. I used these methods because they are both
+used fairly frequently. The only reason that I can think that Array might redefine a method included fom Enumerables
+is if they wanted to add additional functionality that that method for an array.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Arrays have a clear set length. However, enumerables can technically be infinite and are not required to have
+a specific length. As a result, the length method would not make sense for an enumerable.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +63,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are similar to enumerables in the sense that they can be infinite and never ending.
+However, it seems like enumerables can be processed at once as opposed to streams which are done in batches
+over time. 
 ```
