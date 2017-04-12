@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Map and Collect are two insance method names shared by Array and Enumerable. In the Enumerable Map method, because it can be applied to ranges or arrays, the default functionality is to return a new array with the results of the method. For Arrays, there are separate ways to call this method, as you are given the choice to return a new array OR alter the existing array. The same is true for Collect.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+My best guess is that length is not calculated by traversing an array. All enumerable methods are traversal/search methods.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +59,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+If my understanding is correct, it seems as though the filters that act on streams are similar to enumerables. The difference is that an enumberable acts on a finite number of items and a filter acts on a potentially infinite number of inputs?
 ```
