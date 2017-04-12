@@ -16,20 +16,21 @@ material. Instead, digest what you've read and repeat it in your own voice.
 -   [List ADT](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29)
 
 Please read:
-- The google definition of enumerable
-- The _description_ of the Ruby
-Array Class (the part before [Creating
-Arrays](http://ruby-doc.org/core-2.3.0/Array.html#class-Array-label-Creating+Arrays))
-- The _description_ of the Ruby Enumerable Module (the part before **Public
-Instance Methods**)
-- The _overview_ of the List ADT at Wikipedia (the part
-before the Contents block)
-- The list of method names
-in the **Methods** block on the left side of [Ruby Array
-Class](http://ruby-doc.org/core-2.3.0/Array.html) and [Ruby Enumerable
-Module](http://ruby-doc.org/core-2.3.0/Enumerable.html).
-  - Note that Enumerable
-is listed as an **Included Module** for Array.
+
+-   The google definition of enumerable
+-   The _description_ of the Ruby
+    Array Class (the part before [Creating
+    Arrays](http://ruby-doc.org/core-2.3.0/Array.html#class-Array-label-Creating+Arrays))
+-   The _description_ of the Ruby Enumerable Module (the part before **Public
+    Instance Methods**)
+-   The _overview_ of the List ADT at Wikipedia (the part
+    before the Contents block)
+-   The list of method names
+    in the **Methods** block on the left side of [Ruby Array
+    Class](http://ruby-doc.org/core-2.3.0/Array.html) and [Ruby Enumerable
+    Module](http://ruby-doc.org/core-2.3.0/Enumerable.html).
+    -   Note that Enumerable
+        is listed as an **Included Module** for Array.
 
 ## Methods on Array and Enumerable
 
@@ -39,7 +40,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map, any?
+
+I'm not sure, maybe because an array could be slightly different than an enumerable so those differences need to be handled in the different defined methods.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Because the length of an enumerator would need to be calculated by looping through the enumerator which could be slow based on the data type. An array has a size which gets updated every time it is modified so it is quick to retrieve.
+
+http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +64,9 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+They are similar because with an enumerator you iterate over elements one at a time which is how a stream works as well.
+
+As far as differences I think a stream can refer to sending or receiving but an enumerator is only iterating over a given set of data.
+
+https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=stream+definition
 ```
