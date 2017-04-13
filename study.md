@@ -39,7 +39,13 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+drop(n) - drops the firs n# of element from the enumerable, and returns the remaining elements. this is shared with array.
+
+In array, a negative argument will result in error.
+
+
+first(n) returns the first n# of element. the mothod definition appears to be consistent between enumerbables and array.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +54,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+lenth returns an interger, the number of elements in self ... enumerable are saved to memory much like array, but how come length is preved to array?
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +65,4 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
-```
+a stream is defined as a sequence of data. Isn't that what an enumerable is - a list or collection of something that can iterated?```
