@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+They share the methods "drop" and "include?".  I'm honestly not sure what the second part of the question is asking.  All of the methods that are shared that I could find aren't 'redefined', they have the same definition under an array or an enumerable.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+An enumerable must have an 'each' method, so it goes through the values one at a time.  It can't instantly return the length because it must go through each value individually.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +59,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are like enumerables in that they are lists of values or data.  They are different because streams can be constantly added to, where a command is needed to add values to an enumerable.  
 ```
