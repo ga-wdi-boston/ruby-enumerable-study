@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+find_index
+select
+
+it may do them differently for arrays than enumerable because arrays are more restrictive
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Array is always in a specific order and ends at a certain point, enumerable doesn't have to search in a particular order so doesn't have one set end point
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +62,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+In both, data isn't in a set order
+Enumerables have all the items but streams get items as they are available
 ```
