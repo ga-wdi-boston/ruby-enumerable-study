@@ -39,8 +39,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
-```
+find and map. I chose these two because they have been ones that have been
+proven useful and showed up frequently throughout the course. Array methods
+could refine enumerable ones to provide greater flexibility in functionality?```
 
 ## Array#length versus Enumerable#count
 
@@ -48,8 +49,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
-```
+Potentially because arrays have a set length whereas enumerables can sometimes
+be infinite.```
 
 ## Compare Enumerable to Stream
 
@@ -59,5 +60,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
-```
+They are both processed one by one sequentially throughout. Enumerables can
+br performed on the entirety of the set whereas streams are only subsets.```
