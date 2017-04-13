@@ -39,7 +39,18 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+The map method gives us a new array with the result of the applied function to
+the original array.
+The map enumerator gives us a new array after running a block for every elemenyt, so my udnerstanding
+is that it is mainly a syntax difference.
+
+Each is another method that makes the differences stand out to me.
+The enumerable model does not define the each method, the module does so,
+but in an array, the array class defines the method for us already.
+
+
+
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +59,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerable does not make a count of each element of the list it is referencing.
+My understanding is that count is a reference to a range so, it is a count of a complete range,
+but not the indiviudal elements contained in it like an array is.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +72,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+The both process items one at a time. Streams are like lazy, composable enumerables.
+I found this article to be more helpful: http://elixir-lang.org/getting-started/enumerables-and-streams.html
 ```
