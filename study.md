@@ -39,7 +39,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map
+each
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,16 +49,17 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+For an Array there is a predetermined size of the data structure, which can be returned instantaneously.
+
+For an enumerable there is no way to know what sort of structure is being operated on. Therefore in order to get the size of the enumerable it must go through and count as it goes. Does that mean 'count' on an infinite enumerable will count up forever?
 ```
 
 ## Compare Enumerable to Stream
 
 Please read the Wikipedia entry for
-[Stream](https://en.wikipedia.org/wiki/Stream_%28computing%29).  How are streams
-like enumerables?  How are they different?  Please compare and contrast these
+[Stream](https://en.wikipedia.org/wiki/Stream_%28computing%29).  How are streams like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Functions in Stream accept any enumerable as an argument and return a stream as a result. Streams are different in that they can be infinite sets of data.
 ```
