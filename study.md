@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+They both share each_index and any. Arrays and Enumerables are both list objects. So they share certain fundamental characteristics such as being a container for one to many objects/values. As list objects, there is a need to traverse this range. However, enumerables have the added constraint of their values have to be sortable and unique within the range. Since arrays do not, certain enumerable methods would have to be redefined to accommodate the non-uniqueness and the non-sortable values.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+According to stack overflow, Ruby is designed to store arrays as a set length. Ruby does not for enumerables (I don't entire understand the explanation for that). Ruby just handles enumerables differently. I think conceptually, enumerables don't typically have to have their space defined up front, but arrays do.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +59,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams are like enumerables in that both don't have an end to their data. However, streams seem to be ordered only by sequence of input activity. Enumerables can have sort patters determined by the user.
 ```
