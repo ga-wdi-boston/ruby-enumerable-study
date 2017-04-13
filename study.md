@@ -39,7 +39,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+collect - appears to be the same in Array and enumerable
+drop - appears to be the same in Array and enumerable
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +49,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Because enumerable os a module which can operate on any class, and different classes have different ways to determine length i.e. object vs. array. Enumerable does have #count, though, which can be used to iterate through and count length.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +60,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams can be iterated through, one at a time, but they are potentially infinite.
 ```
