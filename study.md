@@ -39,7 +39,18 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Both share the following commands:
+any? :
+any? [{ |obj| block }] → true or false
+
+Cycle :
+cycle(n=nil) { |obj| block } → nil
+cycle(n=nil) → an_enumerator
+
+They might of change it to match the formatting needs of arrays or enumerable.
+I chose this since these were the first i saw in the list on the weblinks for
+Arrays and Enumerable reby doc.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +59,12 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Enumerable has another alias for length called size.  Since it seems they might
+of added Size and did not remove length.
+Size():
+slice(index) → obj or nil
+slice(start, length) → new_ary or nil
+slice(range) → new_ary or nil
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +75,15 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+they seem to iterator over each data.  They are different due to Eager vs Lazy
+Enumerables are Eager and Streams are lazy.
+
+Earger:
+All the functions in the Enum module are eager. Many functions expect an
+enumerable and return a list back:
+
+Lazy:Streams are lazy,  returns a data type, an actual stream, that represents
+the map computation over the range
+
+read at the website elixir-lang.org.
 ```
