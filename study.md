@@ -39,7 +39,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map and sort are defined on both. I think that the reason for being defined differently on enumerables is because enumerables are a mixin, meaning they contribute methods to a number of classes, whereas an array might generally need a more specific application of that method. It seems that a method can be defined multiple times if some of those instances are coming from included modules? Thus allowing several different forms of a method, some more generic and some more specific.
+
+Map and sort seem to fit this definition, where the method needed on arrays is probably simpler than the generic one used by Enumerables, but both can be valuable.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +50,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+I'm not sure, but I believe it is because an enumerable is in a sense defined by its length. That is to say, an enumberable will always be a specificed set of numbers, whereas an array can be and arbitrary list of things, which may increase of decrease due to invocation of other methods.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +61,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Where enumberables contain a finite number of data points, streams are effectively infinite, and will keep sending information to be processed indefinitely.
 ```
