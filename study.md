@@ -39,7 +39,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+drop and maps. Array might redefine method behaviors to get them to behave more
+like arrays rather then just an ennumerable for instance drop returns the first element
+for which a block will return false just like ennurable would but if you pass the array
+method a negative number it will specifically give you an argError. similarly for map
+they both invoke a block on a given enumerable but with the array it is running the
+block on ever element instance of self.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +53,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+It is defined on array because it knows exactly what is counting the length of.
+With enuramble it could be an array a range a hash and the length can be different
+on all of those different type of data types
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +66,8 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+A stream is like a enumerable because it is something that is iterated over. A stream
+though is a constant amount of data moving over a length of time. where as a enumerable
+has finite length and has not time element to it. its just something that can be iterated
+over.
 ```
