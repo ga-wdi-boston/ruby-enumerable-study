@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Map and Select. An array is one method, while an enumerable is a bunch of methods packaged together. This would explain the definition difference.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+On an array, .length is used to get the number of elements in the array. The count enumerable, in a sense does the same thing, but can be used on a variety of objects, so can have a variety of results to its use.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +59,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+One way the two are similar is that they could both go on infinitely. They can both act as iterators. 
 ```
