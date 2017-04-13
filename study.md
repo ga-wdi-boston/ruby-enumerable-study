@@ -35,11 +35,14 @@ is listed as an **Included Module** for Array.
 
 List at least two instance method names (other than `count`) that Array and
 Enumerable share. An included module provides behavior to instances of the
-including class. Why might Array redefine methods included from Enumerable?
+including class. Why might Arrays redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+:any? will got through the whole array and see if 'any' of what you are looking for exists.
+:find will find anything you are looking for if it exists.
+
+Whatever program we are using doesn't know about enumerables therefore we have to specify with the included module with arrays. Otherwise it would treat it like any other array.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+if there was an array with 2 indexes it would have 1 more that that array's count if it were done with length.
+eg: [1,2,3[4,5]] the count would be 4 but the length would be 5.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +63,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+difference: enumerables are finite, whereas streams may not be.
+similarity: only one filter may operate on them at a time and not more.
 ```
