@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+sort and sum.
+
+Taking, sum as an example, both returns the sum of elements but one does is specifically for items in an array whereas the other method is specifically for items in an Enumerable.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+In Ruby's built-in data structures like Array and Hash, length simply retrieves the pre-computed size of the data structure. It should always return instantly.
+
+For Enumerable #count, however, there's no way for it to know what sort of structure it's operating on and thus no quick, clever way to get the size of the enumeration. The only way for it to get the size of the enumeration is to actually enumerate through it and count as it goes.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +64,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+A stream is a sequence of data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a time rather than in large batches. However, enumerables are
+
 ```
