@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+each
+find
+max and min are methods that we may want to redefine. We may know certain
+behaviors related to our array and may want to have them behave differently.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Because an Array is fixed length while Enumerable is not.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +62,11 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both streams and arrays are not fixed, they can potentially have not end point.
+They both iterate over the data they are working with. I read that a stream
+mabye more desireable when the data set is possibly infinite, collections.
+
+http://elixir-lang.org/getting-started/enumerables-and-streams.html
+
+
 ```
