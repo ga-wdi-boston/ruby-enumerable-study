@@ -39,7 +39,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+any? - As far as I can tell, the module allows any? to be called without a block.
+
+collect - functionality is improved to iterate on the array itself with collect!
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +50,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+length a property almost all users will want without installing a separate module.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +61,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams and enumerables are both collections of data types.  However, elements in streams
+can only be accessed one a time and cannot be double back upon, unlike enumerables
+which can access an element any number of times.
 ```
