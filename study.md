@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!-- #first.  they look the same.
+Array may redefine the methods to restrict just the one type of array, not
+ hash or range.
+ -->
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!-- length in a hash may not make sense depending on how the hash is designed -->
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +62,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!-- the items in a stream are operated individually and one-at-a-time -->
 ```
