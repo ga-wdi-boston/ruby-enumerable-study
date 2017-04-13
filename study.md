@@ -39,7 +39,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Array - map { |obj| block } → array
+Enumerator - map → an_enumerator If there is no block it returns the given enumerator
+
+Array - zip(arg, ...) → new_ary
+Enumerator - zip(arg, ...) { |arr| block } → nil Eventhough the enum number is more than array length it will generate as much as enum items but rest will be nul
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +53,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+The measuring systems of array are not aplicaple to enumerables. Enumerables are
+not formated in a listing method so they are not countable.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +65,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+I were not able to understand the difference.
 ```
