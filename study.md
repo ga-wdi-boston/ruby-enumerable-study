@@ -39,7 +39,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!-- The two I noticed and picked out were map and drop. I assume that the only real difference between drop on the number or array would be the values that it is working with. Map is similar except it returns an enumerable.
+ -->
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +49,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!-- Length gives the amount of elements in an array, where as count gives the amount of items in an array, including if an element is made up of more then one item.  -->
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +60,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!--They're similar because they're both iterators however stream's structure is different. It has a stagering affect and wont flow throug as fast. I am really honestly not entirely sure. -->
 ```
