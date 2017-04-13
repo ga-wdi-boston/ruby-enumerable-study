@@ -39,7 +39,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+drop, first, find_index
+
+All of these methods require iterating over data. This may be why Array redifines the methods included from Enumerable.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +50,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+`length` makes sense in the context of an Array because the data structure of an array is fixed. An enumerable can, however, take the form of many different data structures. Therefore, it makes more sense to `count` over each element of that data structure. There may not be an intuitive definition of `length` in the case of an enumerable.
+
+Source: http://stackoverflow.com/questions/28839037/why-does-enumerable-not-have-a-length-attribute-in-ruby
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +63,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+A stream is a sequence of data elements made available over time. Streams and enumerables are very similar - both modules can be use to iterate over data structures and transform values.
 ```
