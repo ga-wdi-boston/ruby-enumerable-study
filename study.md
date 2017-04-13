@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!-- your answer here  :( )-->
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!-- Enumerable can be infinite? Not very clear about enumerable... I understand that if I use a range like (1..10) I can't applied .length on this one because .length is a method that acts on groups of elements, it doesn't act on each of the items to get the length. Instead .count is a method that goes through each item in the selection or group. ... -->
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +59,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!-- From the reading I understand that streams are groups of data structures (data arranged in certain format ) which can be infinite; therefore some methods can't be applied in streams; methods that are applied to streams are methods that perform an action on each item.-->
 ```
