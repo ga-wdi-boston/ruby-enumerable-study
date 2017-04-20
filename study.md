@@ -39,7 +39,11 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Array and Enumerable both have 'find_index' and 'select' methods.
+
+Array may redefine methods included from Enumerable so that the methods have functionalities that work specifically for Array, separate from Enumerable.
+
+Both documentations for Enumerable and Array appear to have identical functionalities for 'find_index' and 'select' methods. However, the documentation for Enumerable assumes the method to be called on ranges, wherease the documentation for Array assumes thte method to be called on arrays.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +52,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+The 'length' method makes sense to be used for Array only, because it finds the number of elements inside arrays. Enumerable assumes data structures that are not just limited to the Array, which could explain why 'length' is defined on Array but not Enumerable. For Enumerable, 'count' can be used instead to find the number of elements.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +63,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams and enumerables are similar in that they're both sequences of data elements. Streams, however, potentially contain unlimited data, wherease enumerables contain a finite set of data. 
 ```
