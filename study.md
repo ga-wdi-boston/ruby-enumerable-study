@@ -39,7 +39,22 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+.collect - I found it interesting that both methods are fairly similar. Execpt Array has a bit more structure, and before using .collect there needs to be a created array. Enumerable has more freedom, the method uses a count and collects the provided enumerator in ("").
+Array: city = [ "Boston", "Tokyo", "Bangkok", "Paris" ] <!--Array city is created with cities-->
+city.collect { |x| x + "!" } <!--takes the item |x| from the pipes and executes the block x + "!" which creates a new array #=> ["Boston", "Tokyo", "Bangkok", "Paris"] -->
+
+Enumerable: (1..5).collect ("dog") <!--Returns a new array by executing the block once for each element in the enum #=> ["dog", "dog", "dog", "dog", "dog"]-->
+
+.find_index - Index has a bit more structure in array where the index needs an array to locate an index. Enumerable uses (1..5) and it'll count 1-5 and return the index of the selected value. Both methods also share similar {} logic.
+Array = .index{ |item| block} #=> int or nil
+Enumerable = .find_index { |obj| block} #=< int or nil
+
+Array: city = [ "Boston", "Tokyo", "Bangkok", "Paris" ] <!--Array city is created with cities-->
+city.index("Boston") <!--Returns the index of Boston #=> 0 -->
+
+Enumerable: (1..100).find_index(5) <!--finds the index of 5 #=> 4 -->
+
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +63,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Arary indexes start at 0 and a negative index is assumed to be at the end of the array. Unlike Enumerables where negative numbers are counted in reverse.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +74,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams uses searching methods like enumerables. Both are a collection of data. Enumerables use maps and lists operations while stream supports lazy operation.
 ```
