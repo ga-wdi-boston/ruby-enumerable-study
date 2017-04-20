@@ -39,7 +39,9 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+Two shared methods include map and reduce.
+
+My guess for why array redefines these methods is because they are pre-existing iteration and traversal methods, and retrofitting seems to be a common enough in code.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +50,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+because an array is an object made up of a series of values linked together, while an enumerable is far more abstract, and thus has a count of how many actions performed, but it does not make sense to have a length for something that is not an object.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +61,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+They seem simmilar in that they both process actions, but enumerables seem focused on the data, while streams seem to be more focused on the actual computing structure.
 ```
