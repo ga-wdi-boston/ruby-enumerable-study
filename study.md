@@ -39,7 +39,17 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map
+Array defines the destructive version of map.
+This is useful if we don't want to create a new array.
+
+reject
+Array defines the destructive version of collect and will push the element
+into the new array if the given block is not true. The Enumerable doc for reject says
+"if the given block is false". The Array definition is more flexible.
+
+http://ruby-doc.org/core-2.3.0/Array.html
+http://ruby-doc.org/core-2.3.0/Enumerable.html
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +58,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+I'm not sure. I found a lot of good information about the differences in this article though.
+http://batsov.com/articles/2014/02/17/the-elements-of-style-in-ruby-number-13-length-vs-size-vs-count/
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +70,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams and enumberables are both collections of data. They are both ordered.
+An enumberable is complete and has an end, it is finite. A stream is like a conveyor belt with potentially unlimted data.
 ```
