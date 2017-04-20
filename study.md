@@ -39,7 +39,8 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+'Any?' is shared by both and so is 'map'. Arrays might need to modify the behavior
+of the enumerable groups because.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,8 +49,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
-```
+Enumerables are mixins, meaning they can be applied to lists that may not have
+ a predefined length and so using a length method makes no sense.```
 
 ## Compare Enumerable to Stream
 
@@ -59,5 +60,6 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both streams and enumerables work with data sets. Streams work with data made available over time
+which are possibly infinite. 
 ```
