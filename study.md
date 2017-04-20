@@ -39,7 +39,10 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+"Any" appears to be exactly the same.
+"Collect" is also similar but the definitions are slightly different.  I'm having a hard
+time understanding the nuance of the difference at the moment though.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +51,10 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Length is always called upon an array which will by its nature have a length.
+Enumerable can be called on any type of data structure, some of this may not have
+lengths. Therefore, the only way for it to return the length would be for it to
+do a count anyway.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +65,8 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+I'm probably misunderstanding this, but my impression is that comparing enumerables
+and streams is comparing apples and oranges.  A stream is a potentially infinite
+flow of data. An enumerable is a way of traversing a collection of data, which
+may or may not be infinite.
 ```
