@@ -39,7 +39,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+first   - the first item of a collection could be different from the
+first item of an array.  if you had a collection of colors, which one would you want to return first?  maybe you want an ordering of ROYGBV
+
+sort - both have a sort method.
+
+okay the more i'm thinking about this the more confused i am getting.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +53,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+the concept of length in an array makes sense - for an array, the length of it will tell you how many items are in the array.  items can be duplicated in an array.
+
+an enumerable is a collection of items - for example, a set of colors.  it is more appropriate to talk about how many are in the collection than its length.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +66,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+i would say they are similar in that for each elemnt in the enumerable or the stream, you don't know what you are going to get.  it's just a bunch of elements.  that's what an enumerable is too
+
+they are different because...i would say there can be duplicates in a stream - that is something you don't want in an enumberable.
 ```
