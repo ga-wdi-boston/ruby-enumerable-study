@@ -39,7 +39,16 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+#collect and #sort are instance methods that Array and Enumerable share.
+
+Since arrays are an enumerable type and Enumerable is an included module for
+Array, Array would redefine any methods it inherits from Enumerable that might
+need functionality that works differently for the Array than for Enumerable.
+
+For #collect and #sort, it appears the functionality is identical, although the
+Ruby source code is different in that the Array functions assume the data
+structure is an array while the Enumerable functions assume a more generic
+collection of objects.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +57,9 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+`length` simply returns the number of elements in the Array as its intended
+function. `count`, on the other hand, can be passed arguments or blocks to be
+matched in order to count elements in the Enumerable.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +70,9 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Streams and enumerables are similar in that they both are a sequence of data
+elements. In the case of streams, the sequence is usually presented over time
+and is potentially unlimited, while enumerables are usually a finite data set.
+In both cases, the sequences of data elements can be filtered as they are being
+processed.
 ```
