@@ -58,7 +58,8 @@ method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
 `length` simply returns the number of elements in the Array as its intended
-function. `count`, on the other hand, can be passed arguments or blocks to be matched in order to count elements in the Enumerable.
+function. `count`, on the other hand, can be passed arguments or blocks to be
+matched in order to count elements in the Enumerable.
 ```
 
 ## Compare Enumerable to Stream
@@ -71,6 +72,7 @@ types.
 ```md
 Streams and enumerables are similar in that they both are a sequence of data
 elements. In the case of streams, the sequence is usually presented over time
-and is potentially unlimited, while enumerables are usually a finite data set. In both cases, the sequences of data elements can be filtered as they are being
+and is potentially unlimited, while enumerables are usually a finite data set.
+In both cases, the sequences of data elements can be filtered as they are being
 processed.
 ```
