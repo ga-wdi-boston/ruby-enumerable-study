@@ -39,7 +39,13 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+- map
+- select
+
+Arrays may redefine methods included from enumerable to make them more specific to the needs of that method for arrays.
+
+Both of the above methods appear to be similar for Array and for Enumerable.  The Array version of each method can only be used for arrays.  However, the enumerable version can return an enumerator in the event that no block is given.
+
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +54,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+Arrays keep track of their own length at all times  Unlike arrays, enumerables are not guaranteed to have lengths.  However, the method Count can be used similarly in Ruby.
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +65,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+They both iterate over data.  However, a difference appears to be that streams can continue to be run over time, as opposed to enumerables which are more fixed in that regard.
 ```
