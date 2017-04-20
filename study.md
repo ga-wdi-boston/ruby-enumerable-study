@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+#any and #to_a are two instances that array and enumerables share.  Array might redefine methods included form enumerables because arrays pass elements to the block but if there is no block, enumerator is returned.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,9 +48,8 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+length is not defined on enumerable because items in enumberables are objects so they do not have a length in the same way an array does.  Instead enumberables uses the size method.
 ```
-
 ## Compare Enumerable to Stream
 
 Please read the Wikipedia entry for
@@ -59,5 +58,5 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Enumerables and streams both have methods to manipulate elements.  The difference is streams manipulate elements one at a time.
 ```
