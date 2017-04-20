@@ -39,7 +39,15 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+first - The Array `first` method returns the same thing as the Enumerable `first`
+method.
+
+select - The Array `select` method returns the same thing as the Enumerable `select`
+method.
+
+References:
+http://ruby-doc.org/core-2.3.1/Array.html
+http://ruby-doc.org/core-2.3.1/Enumerable.html
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +56,15 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+The Enumerable mixin module can be inherited by different classes (not just
+Array).  It may not make sense to have a `length` method defined for these
+types of classes (i.e. `hash` class that inherits the Enumberable mixin module).
+
+The Enumerable mixin module uses its `count` method to iterate through.
+
+References:
+http://ruby-doc.org/core-2.3.1/Array.html
+http://ruby-doc.org/core-2.3.1/Enumerable.html
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +75,12 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+Both streams and enumerables are logical sequences of data that can be iterated
+through.
+
+Streams can be infinite (and ongoing) sequences of data and enumberables are
+finite sequences of data.
+
+Reference:
+https://en.wikipedia.org/wiki/Stream_%28computing%29
 ```
