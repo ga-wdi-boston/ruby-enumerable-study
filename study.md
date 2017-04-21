@@ -40,6 +40,9 @@ Please give reasons for the methods you list.
 
 ```md
 <!-- your answer here -->
+Some methods that Array and Enumerable share are the find_index and first methods.
+I think the reason why Array might redefine methods is because of the data structure.
+Arrays are just a list of values as opposed to ranges and hashes.
 ```
 
 ## Array#length versus Enumerable#count
@@ -49,6 +52,11 @@ method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
 <!-- your answer here -->
+The length method's functionality is specifically to just count the number of elements in
+an array. The count method also does that and more depending on what we write in our block code.
+Examples include counting the number of repititions for a certain value and the frequency of odd and/or even numbers.
+The key difference though is that the length method is used specifically for an array structured data while
+count allows for more flexibility(hashes).
 ```
 
 ## Compare Enumerable to Stream
@@ -60,4 +68,5 @@ types.
 
 ```md
 <!-- your answer here -->
+Streams and enumerables are similar in that they are both lists of data elements. The way in which they differ is that Streams can potentially have unlimited data whereas enumerables do not
 ```
