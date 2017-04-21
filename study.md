@@ -39,7 +39,12 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+<!--
+Two instance methods shared by enumerables and arrays are map and reject.
+Methods from an enumerable may not behave in the
+Reject - returns an array for all elements of enum where the given block returns false, and if no block is given, an Enumerator is returned instead.
+Map - returns a new array with the results of running block once for every element in enum, and if no block is given, an enumerator is returned instead.
+-->
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +53,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!-- Length in array would be differ from what a "length" would define in an enuerable because arrays start from an index of zero and do not allow for negative numbers of the array, while an enumerable allows for negative numbers that start from the end of the list. -->
 ```
 
 ## Compare Enumerable to Stream
@@ -59,5 +64,7 @@ like enumerables?  How are they different?  Please compare and contrast these
 types.
 
 ```md
-<!-- your answer here -->
+<!--
+An enumerable is an object that can pass through many objects one at a time, while a stream is a sequence of data elements made processed and available one at at time over a period of time.
+-->
 ```
