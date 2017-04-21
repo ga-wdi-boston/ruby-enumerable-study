@@ -53,7 +53,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<!-- Length in array would be differ from what a "length" would define in an enuerable because arrays start from an index of zero and do not allow for negative numbers of the array, while an enumerable allows for negative numbers that start from the end of the list. -->
 ```
 
 ## Compare Enumerable to Stream
