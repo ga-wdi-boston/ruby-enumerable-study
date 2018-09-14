@@ -39,7 +39,7 @@ including class. Why might Array redefine methods included from Enumerable?
 Please give reasons for the methods you list.
 
 ```md
-<!-- your answer here -->
+map, sort and collect. Array adds logic to the methods that it gets from Enumerable. Enumerable iterates over things but array uses the iteration to actually change things.
 ```
 
 ## Array#length versus Enumerable#count
@@ -48,7 +48,7 @@ Although both Array and Enumerable have a `count` method, Array also defines the
 method `length`.  Why is `length` sensibly defined on Array but not Enumerable?
 
 ```md
-<!-- your answer here -->
+<Array has a guaranteed length but Enumerable doesn't. Count iterates but we don't have to know how long a thing is to iterate through it. An array has a length, so you can find the length.!>
 ```
 
 ## Compare Enumerable to Stream
